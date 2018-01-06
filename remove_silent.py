@@ -119,8 +119,9 @@ def get_volume(file_records):
         try:
             audio = AudioSegment.from_file(f.path)
             f.max_volume = audio.max
-        except Exception:
+        except Exception as e:
             f.max_volume = -1
+            print(e)
 
 
 if __name__ == '__main__':
@@ -168,7 +169,10 @@ if __name__ == '__main__':
 
             print("File: %s, max_volume=%s." % (single_file.path, single_file.max_volume))
             if not demo:
-                os.remove(single_file.path)
-                print("> Deleted.")
+                try:
+                    os.remove(single_file.path)
+                    print("> Deleted.")
+                except Exception as e:
+                    print("> Delete failed: %s" % e)
 
     db.close()
