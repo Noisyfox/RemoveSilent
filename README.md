@@ -7,4 +7,4 @@ A simple script to delete all silent videos
 `pip install -r requirements.txt`
 3. (Optional) Install ffmpeg or libav according to [here](https://github.com/jiaaro/pydub#getting-ffmpeg-set-up).
 4. Run `remove_silent.bat <video_dir>` or drag the folder onto _remove_silent.bat_.
-5. Use `remove_silent.bat -d <video_dir>` to run in demonstration mode which will list all silent video files without delete them.
+5. Use `remove_silent.bat -d <video_dir>` to run in demonstration mode which will list all silent video files without deleting them.
